@@ -9,6 +9,7 @@ on:
 
 jobs:
   actionlint:
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -17,6 +18,7 @@ jobs:
       - uses: ./actionlint
 
   ghalint:
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     permissions:
       contents: read

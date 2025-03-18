@@ -11,6 +11,7 @@ concurrency:
 
 jobs:
   release-please:
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -31,6 +32,7 @@ jobs:
           config-file: release-please-config.json
 
   release-action:
+    timeout-minutes: 5
     needs: release-please
     if: ${{ needs.release-please.outputs.action-release-created == 'true' }}
     runs-on: ubuntu-latest
@@ -42,6 +44,7 @@ jobs:
           version: ${{ needs.release-please.outputs.action-tag-name }}
 
   release-actionlint:
+    timeout-minutes: 5
     needs: release-please
     if: ${{ needs.release-please.outputs.actionlint-release-created == 'true' }}
     runs-on: ubuntu-latest
@@ -81,6 +84,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   release-ghalint:
+    timeout-minutes: 5
     needs: release-please
     if: ${{ needs.release-please.outputs.ghalint-release-created == 'true' }}
     runs-on: ubuntu-latest
