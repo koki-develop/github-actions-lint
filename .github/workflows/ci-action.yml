@@ -3,7 +3,7 @@ name: CI Action
 permissions: {}
 
 on:
-  push:
+  pull_request:
     paths:
       - ".github/workflows/ci-action.yml"
       - "actionlint/**"
