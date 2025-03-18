@@ -1,0 +1,14 @@
+services:
+  actionlint:
+    build:
+      context: ./dockerfiles/actionlint
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/repo
+
+  ghalint:
+    build:
+      context: ./dockerfiles/ghalint
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/repo
