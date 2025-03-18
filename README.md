@@ -3,6 +3,7 @@
 [![GitHub License](https://img.shields.io/github/license/koki-develop/github-actions-lint)](./LICENSE)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/koki-develop/github-actions-lint/release-please.yml)](./.github/workflows/release-please.yml)
 
+Lint GitHub Actions workflows.
 
 ## Usage
 
