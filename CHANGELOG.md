@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.1](https://github.com/koki-develop/github-actions-lint/compare/v1.0.0...v1.0.1) (2025-03-18)
+
+
+### Bug Fixes
+
+* Add docker prefix to image ([#18](https://github.com/koki-develop/github-actions-lint/issues/18)) ([f45ddb4](https://github.com/koki-develop/github-actions-lint/commit/f45ddb44df6d546a1d49ac64e152ddd6cf49d83e))
+* **zizmor:** Bump zizmor image version ([c73c821](https://github.com/koki-develop/github-actions-lint/commit/c73c821d7de70e7938798af79ddde8ccbfe616fb))
+* **zizmor:** Set the GH_TOKEN variable only if github-token is passed ([472acde](https://github.com/koki-develop/github-actions-lint/commit/472acde010c065aaf782937e240c512319f77845))
+
 ## [1.0.0](https://github.com/koki-develop/github-actions-lint/compare/v0.0.2...v1.0.0) (2025-03-18)
 
 
