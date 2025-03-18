@@ -1,0 +1,19 @@
+name: GitHub Actions Lint
+description: Lint GitHub Actions workflows
+
+# TODO: main-action -> v1
+
+runs:
+  using: composite
+  steps:
+    - name: actionlint
+      uses: koki-develop/github-actions-lint/actionlint@main-action
+      if: ${{ !cancelled() }}
+
+    - name: ghalint
+      uses: koki-develop/github-actions-lint/ghalint@main-action
+      if: ${{ !cancelled() }}
+
+    - name: zizmor
+      uses: koki-develop/github-actions-lint/zizmor@main-action
+      if: ${{ !cancelled() }}
