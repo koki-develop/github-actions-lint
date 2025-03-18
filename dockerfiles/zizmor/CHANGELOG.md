@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.2](https://github.com/koki-develop/github-actions-lint/compare/zizmor-v0.0.1...zizmor-v0.0.2) (2025-03-18)
+
+
+### Bug Fixes
+
+* Pass Github Token explicitly ([bd8cccd](https://github.com/koki-develop/github-actions-lint/commit/bd8cccd400d3c9b7c303c8ee15d8505a4c87c479))
+
 ## 0.0.1 (2025-03-18)
 
 
