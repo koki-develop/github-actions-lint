@@ -1,3 +1,5 @@
 #!/bin/sh
 
-/app/zizmor . --persona="${ZIZMOR_PERSONA:-regular}"
+/app/zizmor . \
+  --color=always \
+  --persona="${ZIZMOR_PERSONA:-regular}"
