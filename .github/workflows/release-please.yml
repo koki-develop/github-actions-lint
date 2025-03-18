@@ -20,6 +20,8 @@ jobs:
       action-release-created: ${{ steps.release-please.outputs.release_created }}
       actionlint-tag-name: ${{ steps.release-please.outputs['dockerfiles/actionlint--tag_name'] }}
       actionlint-release-created: ${{ steps.release-please.outputs['dockerfiles/actionlint--release_created'] }}
+      ghalint-tag-name: ${{ steps.release-please.outputs['dockerfiles/ghalint--tag_name'] }}
+      ghalint-release-created: ${{ steps.release-please.outputs['dockerfiles/ghalint--release_created'] }}
     steps:
       - uses: actions/checkout@v4
       - uses: googleapis/release-please-action@v4
@@ -74,6 +76,45 @@ jobs:
         with:
           context: ./dockerfiles/actionlint
           file: ./dockerfiles/actionlint/Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+  release-ghalint:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.ghalint-release-created == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract version from tag
+        id: version
+        env:
+          TAG_NAME: ${{ needs.release-please.outputs.ghalint-tag-name }} # e.g. "ghalint-v1.2.3"
+        run: echo "result=${TAG_NAME#*-}" >> "$GITHUB_OUTPUT"
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - uses: docker/metadata-action@v5
+        id: meta
+        with:
+          images: ghcr.io/${{ github.repository }}/ghalint
+          tags: |
+            type=raw,value=latest
+            type=semver,pattern={{version}},value=${{ steps.version.outputs.result }}
+            type=sha,format=long
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: ./dockerfiles/ghalint
+          file: ./dockerfiles/ghalint/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
