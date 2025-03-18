@@ -1,0 +1,6 @@
+name: actionlint
+description: Lint GitHub Actions workflows with actionlint
+
+runs:
+  using: docker
+  image: ghcr.io/koki-develop/github-actions-lint/actionlint:latest
