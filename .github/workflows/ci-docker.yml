@@ -1,5 +1,7 @@
 name: CI Docker
 
+permissions: {}
+
 on:
   push:
     paths:

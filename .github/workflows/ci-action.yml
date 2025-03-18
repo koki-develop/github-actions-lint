@@ -1,5 +1,7 @@
 name: CI Action
 
+permissions: {}
+
 on:
   push:
     paths:
