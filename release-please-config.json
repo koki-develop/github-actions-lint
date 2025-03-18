@@ -6,6 +6,11 @@
       "release-type": "simple",
       "component": "action",
       "include-component-in-tag": false
+    },
+    "actionlint": {
+      "release-type": "simple",
+      "component": "actionlint",
+      "include-component-in-tag": true
     }
   }
 }
