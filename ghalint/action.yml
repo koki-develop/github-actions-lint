@@ -10,6 +10,6 @@ inputs:
 
 runs:
   using: docker
-  image: ghcr.io/koki-develop/github-actions-lint/ghalint:0.0.1
+  image: docker://ghcr.io/koki-develop/github-actions-lint/ghalint:0.0.1
   args:
     - ${{ inputs.action-path }}
