@@ -1,0 +1,38 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      action-tag-name: ${{ steps.release-please.outputs.tag_name }}
+      action-release-created: ${{ steps.release-please.outputs.release_created }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: googleapis/release-please-action@v4
+        id: release-please
+        with:
+          token: ${{ github.token }}
+          config-file: release-please-config.json
+
+  release-action:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.action-release-created == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: koki-develop/major-version-sync@v1
+        with:
+          version: ${{ needs.release-please.outputs.action-tag-name }}
