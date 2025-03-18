@@ -1,0 +1,14 @@
+name: zizmor
+description: Lint GitHub Actions workflows with zizmor
+
+inputs:
+  persona:
+    description: The persona to use while auditing
+    required: false
+    default: regular
+
+runs:
+  using: docker
+  image: ghcr.io/koki-develop/github-actions-lint/zizmor:0.0.2
+  env:
+    ZIZMOR_PERSONA: ${{ inputs.persona }}
