@@ -1,0 +1,55 @@
+name: Publish Image
+
+permissions: {}
+
+on:
+  workflow_call:
+    inputs:
+      component-version: # e.g. "actionlint-v1.2.3"
+        type: string
+        required: true
+
+jobs:
+  publish:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Extract component
+        id: component
+        env:
+          COMPONENT_VERSION: ${{ inputs.component-version }} # e.g. "actionlint-v1.2.3"
+        run: |
+          {
+            echo "name=${COMPONENT_VERSION%-*}"
+            echo "version=${COMPONENT_VERSION#*-}"
+          } >> "$GITHUB_OUTPUT"
+
+      - uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804 # v5.7.0
+        id: meta
+        with:
+          images: ghcr.io/${{ github.repository }}/${{ steps.component.outputs.name }}
+          tags: |
+            type=raw,value=latest
+            type=semver,pattern={{version}},value=${{ steps.component.outputs.version }}
+            type=sha,format=long
+
+      - uses: docker/build-push-action@471d1dc4e07e5cdedd4c2171150001c434f0b7a4 # v6.15.0
+        with:
+          context: ./dockerfiles/${{ steps.component.outputs.name }}
+          file: ./dockerfiles/${{ steps.component.outputs.name }}/Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
