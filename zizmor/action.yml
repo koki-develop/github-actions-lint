@@ -2,6 +2,9 @@ name: zizmor
 description: Lint GitHub Actions workflows with zizmor
 
 inputs:
+  github-token:
+    description: The GitHub token to use while auditing
+    required: false
   persona:
     description: The persona to use while auditing
     required: false
@@ -12,3 +15,4 @@ runs:
   image: ghcr.io/koki-develop/github-actions-lint/zizmor:0.0.3
   env:
     ZIZMOR_PERSONA: ${{ inputs.persona }}
+    GH_TOKEN: ${{ inputs.github-token }}
