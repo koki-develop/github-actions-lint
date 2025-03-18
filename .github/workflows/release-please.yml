@@ -48,85 +48,21 @@ jobs:
           version: ${{ needs.release-please.outputs.action-tag-name }}
 
   release-actionlint:
-    timeout-minutes: 5
     needs: release-please
     if: ${{ needs.release-please.outputs.actionlint-release-created == 'true' }}
-    runs-on: ubuntu-latest
+    uses: ./.github/workflows/_publish-image.yml
     permissions:
       contents: read
       packages: write
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          persist-credentials: false
-
-      - name: Extract version from tag
-        id: version
-        env:
-          TAG_NAME: ${{ needs.release-please.outputs.actionlint-tag-name }} # e.g. "actionlint-v1.2.3"
-        run: echo "result=${TAG_NAME#*-}" >> "$GITHUB_OUTPUT"
-
-      - uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ github.token }}
-
-      - uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804 # v5.7.0
-        id: meta
-        with:
-          images: ghcr.io/${{ github.repository }}/actionlint
-          tags: |
-            type=raw,value=latest
-            type=semver,pattern={{version}},value=${{ steps.version.outputs.result }}
-            type=sha,format=long
-
-      - uses: docker/build-push-action@471d1dc4e07e5cdedd4c2171150001c434f0b7a4 # v6.15.0
-        with:
-          context: ./dockerfiles/actionlint
-          file: ./dockerfiles/actionlint/Dockerfile
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+    with:
+      component-version: ${{ needs.release-please.outputs.actionlint-tag-name }}
 
   release-ghalint:
-    timeout-minutes: 5
     needs: release-please
     if: ${{ needs.release-please.outputs.ghalint-release-created == 'true' }}
-    runs-on: ubuntu-latest
+    uses: ./.github/workflows/_publish-image.yml
     permissions:
       contents: read
       packages: write
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          persist-credentials: false
-
-      - name: Extract version from tag
-        id: version
-        env:
-          TAG_NAME: ${{ needs.release-please.outputs.ghalint-tag-name }} # e.g. "ghalint-v1.2.3"
-        run: echo "result=${TAG_NAME#*-}" >> "$GITHUB_OUTPUT"
-
-      - uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ github.token }}
-
-      - uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804 # v5.7.0
-        id: meta
-        with:
-          images: ghcr.io/${{ github.repository }}/ghalint
-          tags: |
-            type=raw,value=latest
-            type=semver,pattern={{version}},value=${{ steps.version.outputs.result }}
-            type=sha,format=long
-
-      - uses: docker/build-push-action@471d1dc4e07e5cdedd4c2171150001c434f0b7a4 # v6.15.0
-        with:
-          context: ./dockerfiles/ghalint
-          file: ./dockerfiles/ghalint/Dockerfile
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+    with:
+      component-version: ${{ needs.release-please.outputs.ghalint-tag-name }}
