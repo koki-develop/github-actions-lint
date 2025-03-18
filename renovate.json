@@ -1,4 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>koki-develop/renovate-config"]
+  "extends": ["github>koki-develop/renovate-config"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^dockerfiles/ghalint/Dockerfile$"],
+      "matchStrings": ["GHALINT_VERSION=(?<currentValue>.*?)\\s"],
+      "depNameTemplate": "suzuki-shunsuke/ghalint",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver"
+    }
+  ]
 }
