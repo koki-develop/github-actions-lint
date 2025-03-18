@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/koki-develop/github-actions-lint/compare/v1.0.1...v1.1.0) (2025-03-18)
+
+
+### Features
+
+* Create action.yml ([#17](https://github.com/koki-develop/github-actions-lint/issues/17)) ([37645b2](https://github.com/koki-develop/github-actions-lint/commit/37645b205360642fa8be643a9ba6cafde4c006ff))
+
 ## [1.0.1](https://github.com/koki-develop/github-actions-lint/compare/v1.0.0...v1.0.1) (2025-03-18)
 
 
