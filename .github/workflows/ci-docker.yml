@@ -1,0 +1,21 @@
+name: CI Docker
+
+on:
+  push:
+    paths:
+      - ".github/workflows/ci-docker.yml"
+      - "dockerfiles/actionlint/**"
+      - "dockerfiles/ghalint/**"
+
+jobs:
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose run --rm actionlint
+
+  ghalint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose run --rm ghalint
