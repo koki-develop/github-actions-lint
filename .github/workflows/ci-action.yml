@@ -2,6 +2,10 @@ name: CI Action
 
 on:
   push:
+    paths:
+      - ".github/workflows/ci-action.yml"
+      - "actionlint/**"
+      - "ghalint/**"
 
 jobs:
   actionlint:
