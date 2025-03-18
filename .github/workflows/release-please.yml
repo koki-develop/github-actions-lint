@@ -72,8 +72,8 @@ jobs:
 
       - uses: docker/build-push-action@v6
         with:
-          context: ./actionlint/dockerfile
-          file: ./actionlint/dockerfile/Dockerfile
+          context: ./dockerfiles/actionlint
+          file: ./dockerfiles/actionlint/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
