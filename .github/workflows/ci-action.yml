@@ -52,4 +52,5 @@ jobs:
           persist-credentials: false
       - uses: ./zizmor
         with:
+          github-token: ${{ github.token }}
           persona: ${{ matrix.persona }}
