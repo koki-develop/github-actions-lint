@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.0](https://github.com/koki-develop/github-actions-lint/compare/v0.0.2...v1.0.0) (2025-03-18)
+
+
+### Features
+
+* Add ghalint action ([a4f79ab](https://github.com/koki-develop/github-actions-lint/commit/a4f79ab6f681218a7c9257abeeafb81dcb4c2b34))
+* Add zizmor action ([0907faa](https://github.com/koki-develop/github-actions-lint/commit/0907faacfabb34651985113f47da631efe5bfeb7))
+* **zizmor:** Add github-token input ([c7eb2d5](https://github.com/koki-develop/github-actions-lint/commit/c7eb2d5f79cac7f37db1793cc360a12dbec23c01))
+
+
+### Bug Fixes
+
+* Bump zizmor image version ([84b0981](https://github.com/koki-develop/github-actions-lint/commit/84b0981789da294e166aa1af7a9420ded0bf4f98))
+
 ## [0.0.2](https://github.com/koki-develop/github-actions-lint/compare/v0.0.1...v0.0.2) (2025-03-18)
 
 
