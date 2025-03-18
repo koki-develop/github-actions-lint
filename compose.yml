@@ -12,3 +12,10 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - .:/repo
+
+  zizmor:
+    build:
+      context: ./dockerfiles/zizmor
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/repo
