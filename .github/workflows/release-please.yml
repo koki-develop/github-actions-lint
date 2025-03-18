@@ -18,8 +18,8 @@ jobs:
     outputs:
       action-tag-name: ${{ steps.release-please.outputs.tag_name }}
       action-release-created: ${{ steps.release-please.outputs.release_created }}
-      actionlint-tag-name: ${{ steps.release-please.outputs.actionlint--tag_name }}
-      actionlint-release-created: ${{ steps.release-please.outputs.actionlint--release_created }}
+      actionlint-tag-name: ${{ steps.release-please.outputs['dockerfiles/actionlint--tag_name'] }}
+      actionlint-release-created: ${{ steps.release-please.outputs['dockerfiles/actionlint--release_created'] }}
     steps:
       - uses: actions/checkout@v4
       - uses: googleapis/release-please-action@v4
@@ -72,8 +72,8 @@ jobs:
 
       - uses: docker/build-push-action@v6
         with:
-          context: ./actionlint/dockerfile
-          file: ./actionlint/dockerfile/Dockerfile
+          context: ./dockerfiles/actionlint
+          file: ./dockerfiles/actionlint/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

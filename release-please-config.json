@@ -6,9 +6,9 @@
       "release-type": "simple",
       "component": "action",
       "include-component-in-tag": false,
-      "exclude-paths": ["actionlint"]
+      "exclude-paths": ["dockerfiles"]
     },
-    "actionlint": {
+    "dockerfiles/actionlint": {
       "release-type": "simple",
       "component": "actionlint",
       "include-component-in-tag": true
