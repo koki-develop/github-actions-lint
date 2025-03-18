@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4](https://github.com/koki-develop/github-actions-lint/compare/actionlint-v0.0.3...actionlint-v0.0.4) (2025-03-18)
+
+
+### Bug Fixes
+
+* Remove loggroup ([1d01bb7](https://github.com/koki-develop/github-actions-lint/commit/1d01bb7609464fce1a5346c804a86184eac90af3))
+
 ## [0.0.3](https://github.com/koki-develop/github-actions-lint/compare/actionlint-v0.0.2...actionlint-v0.0.3) (2025-03-18)
 
 
