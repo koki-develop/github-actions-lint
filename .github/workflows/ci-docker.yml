@@ -18,4 +18,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: docker compose run --rm ghalint
+      - run: docker compose run --rm ghalint "./**/action.yml"
