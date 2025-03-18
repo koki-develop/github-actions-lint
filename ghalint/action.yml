@@ -1,0 +1,15 @@
+name: ghalint
+description: Lint GitHub Actions workflows with ghalint
+
+inputs:
+  action-path:
+    description: |
+      Path to action.yml.
+      This is passed to `ghalint run-action`.
+    required: false
+
+runs:
+  using: docker
+  image: ghcr.io/koki-develop/github-actions-lint/ghalint:0.0.1
+  args:
+    - ${{ inputs.action-path }}
