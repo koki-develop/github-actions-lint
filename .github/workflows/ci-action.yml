@@ -8,6 +8,7 @@ on:
       - ".github/workflows/ci-action.yml"
       - "actionlint/**"
       - "ghalint/**"
+      - "zizmor/**"
 
 jobs:
   actionlint:
