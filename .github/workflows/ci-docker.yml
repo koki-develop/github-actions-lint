@@ -10,12 +10,16 @@ on:
 jobs:
   actionlint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - run: docker compose run --rm actionlint
 
   ghalint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - run: docker compose run --rm ghalint "./**/action.yml"

@@ -10,12 +10,16 @@ on:
 jobs:
   actionlint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: ./actionlint
 
   ghalint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: ./ghalint
