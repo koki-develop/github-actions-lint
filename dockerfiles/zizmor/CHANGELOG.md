@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4](https://github.com/koki-develop/github-actions-lint/compare/zizmor-v0.0.3...zizmor-v0.0.4) (2025-03-18)
+
+
+### Bug Fixes
+
+* **zizmor:** Set the GH_TOKEN variable only if github-token is passed ([472acde](https://github.com/koki-develop/github-actions-lint/commit/472acde010c065aaf782937e240c512319f77845))
+
 ## [0.0.3](https://github.com/koki-develop/github-actions-lint/compare/zizmor-v0.0.2...zizmor-v0.0.3) (2025-03-18)
 
 
