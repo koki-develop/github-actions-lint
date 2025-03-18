@@ -5,7 +5,8 @@
     ".": {
       "release-type": "simple",
       "component": "action",
-      "include-component-in-tag": false
+      "include-component-in-tag": false,
+      "exclude-paths": ["actionlint"]
     },
     "actionlint": {
       "release-type": "simple",
