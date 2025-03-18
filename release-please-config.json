@@ -12,6 +12,11 @@
       "release-type": "simple",
       "component": "actionlint",
       "include-component-in-tag": true
+    },
+    "dockerfiles/ghalint": {
+      "release-type": "simple",
+      "component": "ghalint",
+      "include-component-in-tag": true
     }
   }
 }
