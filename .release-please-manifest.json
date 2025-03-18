@@ -1,4 +1,5 @@
 {
   ".": "0.0.1",
-  "actionlint": "0.0.1"
+  "actionlint": "0.0.1",
+  "dockerfiles/actionlint": "0.0.1"
 }
