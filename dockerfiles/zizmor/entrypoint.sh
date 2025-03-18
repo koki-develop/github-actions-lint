@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/app/zizmor .
+/app/zizmor . --persona="${ZIZMOR_PERSONA:-regular}"
