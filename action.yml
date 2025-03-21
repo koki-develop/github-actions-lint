@@ -5,13 +5,13 @@ runs:
   using: composite
   steps:
     - name: actionlint
-      uses: koki-develop/github-actions-lint/actionlint@a4634895b43225531015f69d2703686686adeec4 # v1.0.1
+      uses: koki-develop/github-actions-lint/actionlint@cd40a2834e54895146e4a73ae17dcc37944ffb0f # v1.1.0
       if: ${{ !cancelled() }}
 
     - name: ghalint
-      uses: koki-develop/github-actions-lint/ghalint@a4634895b43225531015f69d2703686686adeec4 # v1.0.1
+      uses: koki-develop/github-actions-lint/ghalint@cd40a2834e54895146e4a73ae17dcc37944ffb0f # v1.1.0
       if: ${{ !cancelled() }}
 
     - name: zizmor
-      uses: koki-develop/github-actions-lint/zizmor@a4634895b43225531015f69d2703686686adeec4 # v1.0.1
+      uses: koki-develop/github-actions-lint/zizmor@cd40a2834e54895146e4a73ae17dcc37944ffb0f # v1.1.0
       if: ${{ !cancelled() }}
