@@ -38,23 +38,31 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    strategy:
-      matrix:
-        persona:
-          - regular
-          - pedantic
-          - auditor
+      pull-requests: write
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
       - name: zizmor
         env:
-          GH_TOKEN: ${{ github.token }}
-          ZIZMOR_PERSONA: ${{ matrix.persona }}
+          GITHUB_TOKEN: ${{ github.token }}
+          ZIZMOR_PERSONA: auditor
+          REVIEWDOG_ENABLED: true
+          REVIEWDOG_FILTER_MODE: nofilter
+          REVIEWDOG_FAIL_LEVEL: any
         run: |
           docker compose run \
             --rm \
-            --env GH_TOKEN="$GH_TOKEN" \
+            --env GITHUB_TOKEN="$GITHUB_TOKEN" \
             --env ZIZMOR_PERSONA="$ZIZMOR_PERSONA" \
+            --env REVIEWDOG_ENABLED="$REVIEWDOG_ENABLED" \
+            --env REVIEWDOG_FILTER_MODE="$REVIEWDOG_FILTER_MODE" \
+            --env REVIEWDOG_FAIL_LEVEL="$REVIEWDOG_FAIL_LEVEL" \
             zizmor
+
+  failure-example:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
