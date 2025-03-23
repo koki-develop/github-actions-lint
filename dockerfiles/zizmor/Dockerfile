@@ -1,4 +1,4 @@
-FROM ghcr.io/woodruffw/zizmor:1.5.1@sha256:59c0a546bcfe4d6c040fe1532ddc2f6ccc63e59ebd6bc4f8f4ec741d1b77899d
+FROM ghcr.io/woodruffw/zizmor:1.5.2@sha256:f0bbe68825022e3336389e754d4c8a28928246275e9c549251997f25318896f1
 WORKDIR /repo
 
 COPY entrypoint.sh /entrypoint.sh
