@@ -15,7 +15,7 @@ if [ "${REVIEWDOG_ENABLED}" = 'true' ]; then
         -reporter="${REVIEWDOG_REPORTER:-github-pr-review}" \
         -level=error \
         -filter-mode="${REVIEWDOG_FILTER_MODE:-added}" \
-        -fail-level="${REVIEWDOG_FAIL_LEVEL:-none}"
+        -fail-level="${REVIEWDOG_FAIL_LEVEL:-any}"
 else
   /app/zizmor . \
     --color=always \
