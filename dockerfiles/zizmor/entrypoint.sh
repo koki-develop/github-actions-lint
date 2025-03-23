@@ -2,7 +2,7 @@
 
 if [ -n "${GITHUB_TOKEN}" ]; then
   export GH_TOKEN="${GITHUB_TOKEN}"
-  export REVIEWDOG_GITHUB_TOKEN="${GITHUB_TOKEN}"
+  export REVIEWDOG_GITHUB_API_TOKEN="${GITHUB_TOKEN}"
 fi
 
 if [ "${REVIEWDOG_ENABLED}" = 'true' ]; then
