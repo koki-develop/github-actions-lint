@@ -59,10 +59,3 @@ jobs:
             --env REVIEWDOG_FILTER_MODE="$REVIEWDOG_FILTER_MODE" \
             --env REVIEWDOG_FAIL_LEVEL="$REVIEWDOG_FAIL_LEVEL" \
             zizmor
-
-  failure-example:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
