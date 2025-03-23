@@ -50,11 +50,18 @@ jobs:
           REVIEWDOG_ENABLED: true
           REVIEWDOG_FILTER_MODE: nofilter
           REVIEWDOG_FAIL_LEVEL: any
+          CI_PULL_REQUEST: ${{ github.event.pull_request.number }}
+          CI_COMMIT: ${{ github.event.pull_request.head.sha }}
         run: |
           docker compose run \
             --rm \
             --env GITHUB_TOKEN="$GITHUB_TOKEN" \
             --env ZIZMOR_PERSONA="$ZIZMOR_PERSONA" \
+            --env CI_PULL_REQUEST="$CI_PULL_REQUEST" \
+            --env CI_COMMIT="$CI_COMMIT" \
+            --env CI_REPO_OWNER="$GITHUB_REPOSITORY_OWNER" \
+            --env CI_REPO_NAME="${GITHUB_REPOSITORY#*/}" \
+            --env CI_BRANCH="$GITHUB_HEAD_REF" \
             --env REVIEWDOG_ENABLED="$REVIEWDOG_ENABLED" \
             --env REVIEWDOG_FILTER_MODE="$REVIEWDOG_FILTER_MODE" \
             --env REVIEWDOG_FAIL_LEVEL="$REVIEWDOG_FAIL_LEVEL" \
