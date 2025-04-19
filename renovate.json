@@ -4,7 +4,10 @@
   "pinDigests": true,
   "packageRules": [
     {
-      "matchPackageNames": ["ghcr.io/woodruffw/zizmor"],
+      "matchPackageNames": [
+        "ghcr.io/woodruffw/zizmor",
+        "suzuki-shunsuke/ghalint"
+      ],
       "semanticCommitType": "fix"
     }
   ],
