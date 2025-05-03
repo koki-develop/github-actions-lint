@@ -11,20 +11,17 @@
     "dockerfiles/actionlint": {
       "release-type": "simple",
       "component": "actionlint",
-      "include-component-in-tag": true,
-      "skip-github-release": true
+      "include-component-in-tag": true
     },
     "dockerfiles/ghalint": {
       "release-type": "simple",
       "component": "ghalint",
-      "include-component-in-tag": true,
-      "skip-github-release": true
+      "include-component-in-tag": true
     },
     "dockerfiles/zizmor": {
       "release-type": "simple",
       "component": "zizmor",
-      "include-component-in-tag": true,
-      "skip-github-release": true
+      "include-component-in-tag": true
     }
   }
 }
