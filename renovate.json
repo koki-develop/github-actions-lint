@@ -16,7 +16,7 @@
       "customType": "regex",
       "fileMatch": ["^zizmor/action\\.yml$"],
       "matchStrings": [
-        "image: docker://(?<depName>ghcr\\.io/koki-develop/github-actions-lint/.+?):(?<currentValue>.+?)"
+        "image: docker://(?<depName>ghcr\\.io/koki-develop/github-actions-lint/[^:]+):(?<currentValue>[0-9.]+)"
       ],
       "datasourceTemplate": "docker"
     },
