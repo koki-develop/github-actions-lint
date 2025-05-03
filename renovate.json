@@ -14,7 +14,11 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^zizmor/action\\.yml$"],
+      "fileMatch": [
+        "^actionlint/action\\.yml$",
+        "^ghalint/action\\.yml$",
+        "^zizmor/action\\.yml$"
+      ],
       "matchStrings": [
         "image: docker://(?<depName>ghcr\\.io/koki-develop/github-actions-lint/[^:]+):(?<currentValue>[0-9.]+)"
       ],
