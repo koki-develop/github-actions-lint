@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/koki-develop/github-actions-lint/compare/v1.1.1...v1.2.0) (2025-05-03)
+
+
+### Features
+
+* **deps:** update ghcr.io/koki-develop/github-actions-lint/zizmor docker tag to v0.1.1 ([#39](https://github.com/koki-develop/github-actions-lint/issues/39)) ([9360edd](https://github.com/koki-develop/github-actions-lint/commit/9360edd398b4c5b3ac40fa42eec66a4deee13295))
+
 ## [1.1.1](https://github.com/koki-develop/github-actions-lint/compare/v1.1.0...v1.1.1) (2025-05-03)
 
 
