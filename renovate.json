@@ -8,7 +8,25 @@
         "ghcr.io/woodruffw/zizmor",
         "suzuki-shunsuke/ghalint"
       ],
+      "semanticCommitType": "feat"
+    },
+    {
+      "matchPackageNames": [
+        "ghcr.io/koki-develop/github-actions-lint/actionlint",
+        "ghcr.io/koki-develop/github-actions-lint/ghalint",
+        "ghcr.io/koki-develop/github-actions-lint/zizmor"
+      ],
+      "matchUpdateTypes": "patch",
       "semanticCommitType": "fix"
+    },
+    {
+      "matchPackageNames": [
+        "ghcr.io/koki-develop/github-actions-lint/actionlint",
+        "ghcr.io/koki-develop/github-actions-lint/ghalint",
+        "ghcr.io/koki-develop/github-actions-lint/zizmor"
+      ],
+      "matchUpdateTypes": ["major", "minor"],
+      "semanticCommitType": "feat"
     }
   ],
   "customManagers": [
