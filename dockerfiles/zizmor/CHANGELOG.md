@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0](https://github.com/koki-develop/github-actions-lint/compare/zizmor-v0.0.5...zizmor-v0.1.0) (2025-05-03)
+
+
+### Features
+
+* **deps:** update ghcr.io/woodruffw/zizmor docker tag to v1.6.0 ([#30](https://github.com/koki-develop/github-actions-lint/issues/30)) ([a39cc2a](https://github.com/koki-develop/github-actions-lint/commit/a39cc2add6509324af5f6628a0cc6c56ad1978dc))
+
 ## [0.0.5](https://github.com/koki-develop/github-actions-lint/compare/zizmor-v0.0.4...zizmor-v0.0.5) (2025-03-23)
 
 
