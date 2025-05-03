@@ -14,6 +14,15 @@
   "customManagers": [
     {
       "customType": "regex",
+      "fileMatch": ["^zizmor/action\\.yml$"],
+      "matchStrings": [
+        "image: docker://ghcr\\.io/koki-develop/github-actions-lint/zizmor:(?<currentValue>[0-9.]+)"
+      ],
+      "depNameTemplate": "ghcr.io/koki-develop/github-actions-lint/zizmor",
+      "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
       "fileMatch": ["^dockerfiles/ghalint/Dockerfile$"],
       "matchStrings": ["GHALINT_VERSION=(?<currentValue>.*?)\\s"],
       "depNameTemplate": "suzuki-shunsuke/ghalint",
