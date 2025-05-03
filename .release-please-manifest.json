@@ -2,5 +2,5 @@
   ".": "1.1.1",
   "dockerfiles/actionlint": "0.0.4",
   "dockerfiles/ghalint": "0.0.3",
-  "dockerfiles/zizmor": "0.0.5"
+  "dockerfiles/zizmor": "0.1.0"
 }
