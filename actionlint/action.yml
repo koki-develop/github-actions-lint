@@ -3,4 +3,4 @@ description: Lint GitHub Actions workflows with actionlint
 
 runs:
   using: docker
-  image: docker://ghcr.io/koki-develop/github-actions-lint/actionlint:0.0.2
+  image: docker://ghcr.io/koki-develop/github-actions-lint/actionlint:0.0.4
