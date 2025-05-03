@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/koki-develop/github-actions-lint/compare/v1.1.0...v1.1.1) (2025-05-03)
+
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/koki-develop/github-actions-lint/actionlint docker tag to v0.0.4 ([#33](https://github.com/koki-develop/github-actions-lint/issues/33)) ([975a414](https://github.com/koki-develop/github-actions-lint/commit/975a414c1dd810738a7a4e8dc0d6c55f6349c87d))
+* **deps:** update ghcr.io/koki-develop/github-actions-lint/ghalint docker tag to v0.0.3 ([#34](https://github.com/koki-develop/github-actions-lint/issues/34)) ([89d934d](https://github.com/koki-develop/github-actions-lint/commit/89d934d12acc073f0a50248b625c2f8b38828c4a))
+
 ## [1.1.0](https://github.com/koki-develop/github-actions-lint/compare/v1.0.1...v1.1.0) (2025-03-18)
 
 
