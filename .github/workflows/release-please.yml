@@ -20,12 +20,16 @@ jobs:
       pull-requests: write
     outputs:
       action-tag-name: ${{ steps.release-please.outputs.tag_name }}
+      action-release-created: ${{ steps.release-please.outputs.release_created }}
       # actionlint
       actionlint-tag-name: ${{ steps.release-please.outputs['dockerfiles/actionlint--tag_name'] }}
+      actionlint-release-created: ${{ steps.release-please.outputs['dockerfiles/actionlint--release_created'] }}
       # ghalint
       ghalint-tag-name: ${{ steps.release-please.outputs['dockerfiles/ghalint--tag_name'] }}
+      ghalint-release-created: ${{ steps.release-please.outputs['dockerfiles/ghalint--release_created'] }}
       # zizmor
       zizmor-tag-name: ${{ steps.release-please.outputs['dockerfiles/zizmor--tag_name'] }}
+      zizmor-release-created: ${{ steps.release-please.outputs['dockerfiles/zizmor--release_created'] }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -39,7 +43,7 @@ jobs:
   release-action:
     timeout-minutes: 5
     needs: release-please
-    if: ${{ needs.release-please.outputs.action-tag-name != '' }}
+    if: ${{ needs.release-please.outputs.action-release-created == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -50,7 +54,7 @@ jobs:
 
   release-actionlint:
     needs: release-please
-    if: ${{ needs.release-please.outputs.actionlint-tag-name != '' }}
+    if: ${{ needs.release-please.outputs.actionlint-release-created == 'true' }}
     uses: ./.github/workflows/_publish-image.yml
     permissions:
       contents: read
@@ -60,7 +64,7 @@ jobs:
 
   release-ghalint:
     needs: release-please
-    if: ${{ needs.release-please.outputs.ghalint-tag-name != '' }}
+    if: ${{ needs.release-please.outputs.ghalint-release-created == 'true' }}
     uses: ./.github/workflows/_publish-image.yml
     permissions:
       contents: read
@@ -70,7 +74,7 @@ jobs:
 
   release-zizmor:
     needs: release-please
-    if: ${{ needs.release-please.outputs.zizmor-tag-name != '' }}
+    if: ${{ needs.release-please.outputs.zizmor-release-created == 'true' }}
     uses: ./.github/workflows/_publish-image.yml
     permissions:
       contents: read
