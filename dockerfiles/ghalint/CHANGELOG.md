@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0](https://github.com/koki-develop/github-actions-lint/compare/ghalint-v0.0.3...ghalint-v0.1.0) (2025-05-16)
+
+
+### Features
+
+* **deps:** update dependency suzuki-shunsuke/ghalint to v1.4.0 ([#45](https://github.com/koki-develop/github-actions-lint/issues/45)) ([a69a449](https://github.com/koki-develop/github-actions-lint/commit/a69a4494f1b93ddbfd0f38ac6da9df39511fb027))
+
 ## [0.0.3](https://github.com/koki-develop/github-actions-lint/compare/ghalint-v0.0.2...ghalint-v0.0.3) (2025-04-19)
 
 
