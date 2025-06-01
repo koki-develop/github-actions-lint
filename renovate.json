@@ -8,6 +8,15 @@
         "ghcr.io/woodruffw/zizmor",
         "suzuki-shunsuke/ghalint"
       ],
+      "matchUpdateTypes": ["patch"],
+      "semanticCommitType": "fix"
+    },
+    {
+      "matchPackageNames": [
+        "ghcr.io/woodruffw/zizmor",
+        "suzuki-shunsuke/ghalint"
+      ],
+      "matchUpdateTypes": ["major", "minor"],
       "semanticCommitType": "feat"
     },
     {
