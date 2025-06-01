@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/koki-develop/github-actions-lint/compare/v1.4.0...v1.4.1) (2025-06-01)
+
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/koki-develop/github-actions-lint/ghalint docker tag to v0.1.1 ([#53](https://github.com/koki-develop/github-actions-lint/issues/53)) ([54d3de7](https://github.com/koki-develop/github-actions-lint/commit/54d3de7d29829634b34c4c9f7ccfa981136a7bb6))
+
 ## [1.4.0](https://github.com/koki-develop/github-actions-lint/compare/v1.3.0...v1.4.0) (2025-05-16)
 
 
