@@ -26,7 +26,7 @@ jobs:
         with:
           action-path: ./.github/actions/**/action.yml
 
-      # zizmor (https://github.com/woodruffw/zizmor)
+      # zizmor (https://github.com/zizmorcore/zizmor)
       # For more details: https://github.com/koki-develop/github-actions-lint/blob/main/zizmor/action.yml
       - uses: koki-develop/github-actions-lint/zizmor@v1
         with:

@@ -5,7 +5,7 @@
   "packageRules": [
     {
       "matchPackageNames": [
-        "ghcr.io/woodruffw/zizmor",
+        "ghcr.io/zizmorcore/zizmor",
         "suzuki-shunsuke/ghalint"
       ],
       "matchUpdateTypes": ["patch"],
@@ -13,7 +13,7 @@
     },
     {
       "matchPackageNames": [
-        "ghcr.io/woodruffw/zizmor",
+        "ghcr.io/zizmorcore/zizmor",
         "suzuki-shunsuke/ghalint"
       ],
       "matchUpdateTypes": ["major", "minor"],
