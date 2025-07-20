@@ -13,6 +13,7 @@ concurrency:
 
 jobs:
   release-please:
+    name: Create release
     timeout-minutes: 5
     runs-on: ubuntu-latest
     permissions:
@@ -41,6 +42,7 @@ jobs:
           config-file: release-please-config.json
 
   release-action:
+    name: Sync major version tag
     timeout-minutes: 5
     needs: release-please
     if: ${{ needs.release-please.outputs.action-release-created == 'true' }}

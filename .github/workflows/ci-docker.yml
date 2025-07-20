@@ -12,6 +12,7 @@ on:
 
 jobs:
   actionlint:
+    name: Run actionlint with Docker
     timeout-minutes: 5
     runs-on: ubuntu-latest
     permissions:
@@ -23,6 +24,7 @@ jobs:
       - run: docker compose run --rm actionlint
 
   ghalint:
+    name: Run ghalint with Docker
     timeout-minutes: 5
     runs-on: ubuntu-latest
     permissions:
@@ -34,6 +36,7 @@ jobs:
       - run: docker compose run --rm ghalint "./**/action.yml"
 
   zizmor:
+    name: Run zizmor with Docker
     timeout-minutes: 5
     runs-on: ubuntu-latest
     permissions:

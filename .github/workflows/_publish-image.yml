@@ -11,6 +11,7 @@ on:
 
 jobs:
   publish:
+    name: Publish Docker image
     timeout-minutes: 5
     runs-on: ubuntu-latest
     permissions:
