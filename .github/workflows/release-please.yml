@@ -17,8 +17,8 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
+      contents: write # contents:write required so release-please can create tags and GitHub releases
+      pull-requests: write # pull-requests:write required so release-please can manage the release PR lifecycle
     outputs:
       action-tag-name: ${{ steps.release-please.outputs.tag_name }}
       action-release-created: ${{ steps.release-please.outputs.release_created }}
@@ -48,7 +48,7 @@ jobs:
     if: ${{ needs.release-please.outputs.action-release-created == 'true' }}
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write # contents:write required to retag the major release reference to the latest release commit
     steps:
       - uses: koki-develop/major-version-sync@b86eb31aef1c06d81f133799b35ace3c80ebdf0a # v1.2.0
         with:
@@ -60,7 +60,7 @@ jobs:
     uses: ./.github/workflows/_publish-image.yml
     permissions:
       contents: read
-      packages: write
+      packages: write # packages:write required to publish refreshed Action images to GitHub Container Registry
     with:
       component-version: ${{ needs.release-please.outputs.actionlint-tag-name }}
 
@@ -70,7 +70,7 @@ jobs:
     uses: ./.github/workflows/_publish-image.yml
     permissions:
       contents: read
-      packages: write
+      packages: write # packages:write required to publish refreshed Action images to GitHub Container Registry
     with:
       component-version: ${{ needs.release-please.outputs.ghalint-tag-name }}
 
@@ -80,6 +80,6 @@ jobs:
     uses: ./.github/workflows/_publish-image.yml
     permissions:
       contents: read
-      packages: write
+      packages: write # packages:write required to publish refreshed Action images to GitHub Container Registry
     with:
       component-version: ${{ needs.release-please.outputs.zizmor-tag-name }}
