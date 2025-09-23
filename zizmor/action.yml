@@ -12,7 +12,7 @@ inputs:
 
 runs:
   using: docker
-  image: docker://ghcr.io/koki-develop/github-actions-lint/zizmor:0.3.0
+  image: docker://ghcr.io/koki-develop/github-actions-lint/zizmor:0.4.0
   env:
     ZIZMOR_GITHUB_TOKEN: ${{ inputs.github-token }}
     ZIZMOR_PERSONA: ${{ inputs.persona }}
