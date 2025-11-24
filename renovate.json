@@ -43,10 +43,10 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^actionlint/action\\.yml$",
-        "^ghalint/action\\.yml$",
-        "^zizmor/action\\.yml$"
+      "managerFilePatterns": [
+        "/^actionlint/action\\.yml$/",
+        "/^ghalint/action\\.yml$/",
+        "/^zizmor/action\\.yml$/"
       ],
       "matchStrings": [
         "image: docker://(?<depName>ghcr\\.io/koki-develop/github-actions-lint/[^:]+):(?<currentValue>[0-9.]+)"
@@ -55,7 +55,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["^dockerfiles/ghalint/Dockerfile$"],
+      "managerFilePatterns": ["/^dockerfiles/ghalint/Dockerfile$/"],
       "matchStrings": ["GHALINT_VERSION=(?<currentValue>.*?)\\s"],
       "depNameTemplate": "suzuki-shunsuke/ghalint",
       "datasourceTemplate": "github-releases",
