@@ -2,6 +2,10 @@ name: Publish Image
 
 permissions: {}
 
+concurrency:
+  group: ${{ github.workflow }}-${{ inputs.component-version }}
+  cancel-in-progress: false
+
 on:
   workflow_call:
     inputs:
