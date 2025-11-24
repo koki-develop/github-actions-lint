@@ -6,7 +6,8 @@
     {
       "matchPackageNames": [
         "ghcr.io/zizmorcore/zizmor",
-        "suzuki-shunsuke/ghalint"
+        "suzuki-shunsuke/ghalint",
+        "rhysd/actionlint"
       ],
       "matchUpdateTypes": ["patch"],
       "semanticCommitType": "fix"
@@ -14,7 +15,8 @@
     {
       "matchPackageNames": [
         "ghcr.io/zizmorcore/zizmor",
-        "suzuki-shunsuke/ghalint"
+        "suzuki-shunsuke/ghalint",
+        "rhysd/actionlint"
       ],
       "matchUpdateTypes": ["major", "minor"],
       "semanticCommitType": "feat"
