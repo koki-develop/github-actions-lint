@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   release-please:
-    name: Create release
+    name: Release Please
     timeout-minutes: 5
     runs-on: ubuntu-latest
     permissions:
