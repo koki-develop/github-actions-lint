@@ -1,4 +1,4 @@
-FROM rhysd/actionlint:1.7.7@sha256:887a259a5a534f3c4f36cb02dca341673c6089431057242cdc931e9f133147e9
+FROM rhysd/actionlint:1.7.9@sha256:a0383f60d92601e2694e24b24d37df7b6a40bed7cedbc447611c50009bf02d94
 WORKDIR /repo
 
 COPY entrypoint.sh /entrypoint.sh
