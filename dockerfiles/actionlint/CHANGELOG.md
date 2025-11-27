@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.5](https://github.com/koki-develop/github-actions-lint/compare/actionlint-v0.0.4...actionlint-v0.0.5) (2025-11-27)
+
+
+### Bug Fixes
+
+* **deps:** update rhysd/actionlint docker tag to v1.7.9 ([#78](https://github.com/koki-develop/github-actions-lint/issues/78)) ([a938681](https://github.com/koki-develop/github-actions-lint/commit/a93868134e0c54953805d41e9eec58c68ae7ae24))
+
 ## [0.0.4](https://github.com/koki-develop/github-actions-lint/compare/actionlint-v0.0.3...actionlint-v0.0.4) (2025-03-18)
 
 
