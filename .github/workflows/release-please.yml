@@ -32,7 +32,7 @@ jobs:
       zizmor-tag-name: ${{ steps.release-please.outputs['dockerfiles/zizmor--tag_name'] }}
       zizmor-release-created: ${{ steps.release-please.outputs['dockerfiles/zizmor--release_created'] }}
     steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           persist-credentials: false
       - uses: googleapis/release-please-action@16a9c90856f42705d54a6fda1823352bdc62cf38 # v4.4.0
